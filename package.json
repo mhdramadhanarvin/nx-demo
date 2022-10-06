@@ -9,6 +9,7 @@
   },
   "private": true,
   "dependencies": {
+    "@nxrocks/nx-flutter": "^4.0.2",
     "@plugified/nx-fastify": "^1.0.0",
     "core-js": "^3.6.5",
     "express": "^4.18.1",
