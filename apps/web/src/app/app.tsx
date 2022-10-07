@@ -6,9 +6,22 @@ const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   useEffect(() => {
-    fetch('/api/todos')
-      .then((_) => _.json())
-      .then(setTodos);
+    // fetch('/api/todos')
+    //   .then((_) => _.json())
+    //   .then(setTodos);
+    const url = '/api/todos';
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        setTodos(json.data);
+      } catch (error) {
+        console.log('error', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   function addTodo() {
